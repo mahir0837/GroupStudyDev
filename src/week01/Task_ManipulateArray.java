@@ -4,7 +4,11 @@ import java.io.PrintStream;
 import java.util.Arrays;
 
 public class Task_ManipulateArray {
-
+    /*
+     Given an int array
+     int[] myArray = new int[3];
+     Assign 5 to all elements of this array In a FOR EACH loop
+ */
 
     public static void main(String[] args) {
 

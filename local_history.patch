@@ -1,0 +1,103 @@
+Index: src/week02/AnimalFeast/nonRepaitingVovels.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/week02/AnimalFeast/nonRepaitingVovels.java b/src/week02/AnimalFeast/nonRepaitingVovels.java
+new file mode 100644
+--- /dev/null	(date 1675318964484)
++++ b/src/week02/AnimalFeast/nonRepaitingVovels.java	(date 1675318964484)
+@@ -0,0 +1,50 @@
++package week02.AnimalFeast;
++
++import java.util.Arrays;
++import java.util.stream.Stream;
++
++public class nonRepaitingVovels {
++
++
++    public static int firstNonRepaitingVovel(String word) {
++        boolean b;
++
++        for (int i = 0; i < word.length(); i++) {
++            boolean unique = true;
++            b = word.charAt(i) == 'a' || word.charAt(i) == 'e' || word.charAt(i) == 'i'
++                    || word.charAt(i) == 'o' || word.charAt(i) == 'u';
++
++
++            for (int j = 0; j < word.length(); j++) {
++
++                if (b) {
++                    if (i != j && word.charAt(i) == word.charAt(j)) {
++                        unique = false;
++                        System.out.println();
++                        break;
++                    }
++
++                }
++
++            }
++            if (b) {
++
++                if (unique) {
++
++                    System.out.println(word.indexOf(word.charAt(i)));
++
++                }
++
++            }
++            
++        }
++
++
++        return -1;
++    }
++
++    public static void main(String[] args) {
++        firstNonRepaitingVovel("google");
++
++    }
++}
+\ No newline at end of file
+Index: src/week02/nonRepatingVovels.java
+===================================================================
+diff --git a/src/week02/nonRepatingVovels.java b/src/week02/nonRepatingVovels.java
+deleted file mode 100644
+--- a/src/week02/nonRepatingVovels.java	
++++ /dev/null	
+@@ -1,35 +0,0 @@
+-package week02;
+-
+-import java.util.ArrayList;
+-import java.util.Arrays;
+-import java.util.Collections;
+-
+-public class nonRepatingVovels {
+-
+-    public static void firstNonRepaitingVovel(String word) {
+-
+-        boolean b;
+-        ArrayList<Character> ch = new ArrayList<>();
+-
+-        for (int i = 0; i < word.length(); i++) {
+-            b = word.charAt(i) == 'a' || word.charAt(i) == 'e' || word.charAt(i) == 'i'
+-                    || word.charAt(i) == 'o' || word.charAt(i) == 'u';
+-            if (b) {
+-                ch.add(word.charAt(i));
+-            }
+-        }
+-        for (int i = 0; i < ch.size(); i++) {
+-            if (Collections.frequency(ch, ch.get(i)) == 1) {
+-                System.out.println(ch.get(i));
+-                break;
+-            }
+-        }
+-
+-    }
+-
+-
+-    public static void main(String[] args) {
+-
+-        firstNonRepaitingVovel("maaaahiiiiirrrseo");
+-    }
+-}
