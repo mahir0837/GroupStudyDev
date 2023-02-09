@@ -9,6 +9,10 @@ public class capitalizedWord {
 
     public static String capitalizedWord(String word){
 
+        if (word==null||word.isEmpty()){
+           return "";
+        }
+
         String result="";
         List<String> arr = Arrays.stream(word.split(" ")).
                 map(p->p.substring(0,1).toUpperCase()+p.substring(1).toLowerCase()).collect(Collectors.toList());
