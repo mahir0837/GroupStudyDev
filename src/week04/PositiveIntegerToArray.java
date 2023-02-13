@@ -15,7 +15,8 @@ public class PositiveIntegerToArray {
                 arr[i] = Integer.parseInt(numString.charAt(i) + "");
             }
         }else{
-           throw new RuntimeException("Number is not possitive "+number);
+            System.err.println("Number is not possitive "+number);
+            return new int[]{};
         }
         return arr;
     }
